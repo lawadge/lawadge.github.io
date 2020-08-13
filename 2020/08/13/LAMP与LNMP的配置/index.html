@@ -22,15 +22,32 @@
     var CONFIG = {"hostname":"lawadge.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Pumpkin-Man">
-<meta property="og:url" content="https://lawadge.github.io/categories/Centos7-%E7%9A%84%E5%B8%B8%E8%A7%84%E4%BD%BF%E7%94%A8s/index.html">
+  <meta name="description" content="LAMP与LNMP的配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LAMP与LNMP的配置">
+<meta property="og:url" content="https://lawadge.github.io/2020/08/13/LAMP%E4%B8%8ELNMP%E7%9A%84%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Pumpkin-Man">
+<meta property="og:description" content="LAMP与LNMP的配置">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/13/axz7v9.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/13/axzbuR.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/13/azSoIf.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/13/azpWfU.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/13/az9wAx.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/13/azCYPf.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/13/aze8de.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/13/azmZm8.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/13/azmD6x.png">
+<meta property="article:published_time" content="2020-08-12T22:37:59.000Z">
+<meta property="article:modified_time" content="2020-08-13T01:27:27.816Z">
 <meta property="article:author" content="Adge">
+<meta property="article:tag" content="LAMP">
+<meta property="article:tag" content="LNMP">
+<meta property="article:tag" content="Centos7">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/08/13/axz7v9.png">
 
-<link rel="canonical" href="https://lawadge.github.io/categories/Centos7-%E7%9A%84%E5%B8%B8%E8%A7%84%E4%BD%BF%E7%94%A8s/">
+<link rel="canonical" href="https://lawadge.github.io/2020/08/13/LAMP%E4%B8%8ELNMP%E7%9A%84%E9%85%8D%E7%BD%AE/">
 
 
 <script id="page-configurations">
@@ -38,12 +55,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>分类: Centos7 的常规使用s | Pumpkin-Man</title>
+  <title>LAMP与LNMP的配置 | Pumpkin-Man</title>
   
 
 
@@ -161,51 +178,234 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">Centos7 的常规使用s
-          <small>分类</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lawadge.github.io/2020/08/13/LAMP%E4%B8%8ELNMP%E7%9A%84%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/joker.png">
+      <meta itemprop="name" content="Adge">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Pumpkin-Man">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LAMP与LNMP的配置
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-13 06:37:59 / 修改时间：09:27:27" itemprop="dateCreated datePublished" datetime="2020-08-13T06:37:59+08:00">2020-08-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Centos7-%E7%9A%84%E6%97%A5%E5%B8%B8/" itemprop="url" rel="index"><span itemprop="name">Centos7 的日常</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <div class="post-description">LAMP与LNMP的配置</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <h1 id="Centos7搭建配置LAMP"><a href="#Centos7搭建配置LAMP" class="headerlink" title="Centos7搭建配置LAMP"></a>Centos7搭建配置LAMP</h1><ul>
+<li><p>LAMP代表的是：</p>
+<ul>
+<li>Linux 操作系统；</li>
+<li>Apache 网页服务器 ；</li>
+<li>MySQL 数据库管理系统（或者数据库服务器）；</li>
+<li>PHP 或 Perl 或 Python 是脚本语言。</li>
+</ul>
+</li>
+<li><p>在centos7环境中  我们安装Apache HTTP服务器</p>
+<ul>
+<li>因为httpd是Apache服务器的主程序，被设计为一个独立运行的后台进程，它会建立一个处理请求的子进程或线程的池，所以接下来安装httpd，输入如下代码：</li>
+<li><code>yum –y install httpd</code></li>
+<li>完成后开启httpd服务，并且让其在重启系统时自启动 代码如下：<ul>
+<li><code>systemctl start httpd.service</code></li>
+<li><code>systemctl enable httpd.service</code></li>
+</ul>
+</li>
+<li>接着配置防火墙允许服务器被外部访问 如下：<ul>
+<li><code>firewall-cmd --permanent --add-service=http --add-port=80/tcp</code></li>
+<li><code>firewall-cmd –reload</code></li>
+<li>重启服务：<code>systemctl restart httpd.service</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>安装MariaDB数据库 如下：</p>
+<ul>
+<li><code>yum –y install mariadb-server mariadb</code></li>
+<li><code>systemctl start mariadb.service</code></li>
+<li><code>systemctl enable mariadb.service</code></li>
+<li><code>firewall-cmd --add-service=mysql </code></li>
+</ul>
+</li>
+<li><p>安装PHP 如下：</p>
+<ul>
+<li><p><code>yum –y install php</code></p>
+</li>
+<li><p><code>systemctl restart httpd.service</code></p>
+</li>
+<li><p>为了测试PHP是否安装成功 我们在网站根目录下创建phpinfo.php 通过浏览器访问来得知结果</p>
+<p><img src="https://s1.ax1x.com/2020/08/13/axz7v9.png" alt="axz7v9.png"></p>
+<p><img src="https://s1.ax1x.com/2020/08/13/axzbuR.png" alt="axzbuR.png"></p>
+</li>
+</ul>
+</li>
+<li><p>配置防火墙使其无法访问web页面以及能访问web页面</p>
+<p><img src="https://s1.ax1x.com/2020/08/13/azSoIf.png" alt="azSoIf.png"></p>
+</li>
+<li><p>禁用icmp协议达到禁止ping主机</p>
+<ul>
+<li><p>禁止192.168.192.112 访问到我</p>
+</li>
+<li><p><code>iptables -A INPUT -p icmp -s 192.168.192.112 -j DROP</code></p>
+<p><img src="https://s1.ax1x.com/2020/08/13/azpWfU.png" alt="azpWfU.png"></p>
+</li>
+<li><p>删除规则 通过<code>iptables -L -n --line-number</code>可以显示规则和相对应的编号</p>
+</li>
+<li><p><code>iptables -D INPUT 1 </code>删除规则编号1</p>
+</li>
+</ul>
+</li>
+<li><p>配置ssh禁止root登录</p>
+<ul>
+<li><p>修改<code>#PermitRootLogin yes</code>文件，将<code>#PermitRootLogin yes</code>修改为<code>PermitRootLogin no</code></p>
+</li>
+<li><p>查看 <code>more /etc/ssh/sshd_config | grep PermitRootLogin</code></p>
+<p><img src="https://s1.ax1x.com/2020/08/13/az9wAx.png" alt="az9wAx.png"></p>
+</li>
+<li><p>修改ssh端口为12345</p>
+</li>
+<li><p>防火墙放行：</p>
+<ul>
+<li><p><code>firewall-cmd --zone=public --add-port=12345/tcp --permanent</code></p>
+</li>
+<li><p><code>firewall-cmd --reload</code></p>
+</li>
+<li><p><code>service sshd restart</code></p>
+</li>
+<li><p><code>nano /etc/sysconfigti/iptables</code></p>
+</li>
+<li><p><code>-A INPUT -p tcp -m state --state NEW -m tcp --dport 12345 -j ACCEPT</code></p>
+</li>
+<li><p>service iptables restart</p>
+<p><img src="https://s1.ax1x.com/2020/08/13/azCYPf.png" alt="azCYPf.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Centos7搭建LNMP"><a href="#Centos7搭建LNMP" class="headerlink" title="Centos7搭建LNMP"></a>Centos7搭建LNMP</h1><ul>
+<li><p>Nginx的配置</p>
+<ul>
+<li><code>yum -y install nginx</code></li>
+<li><code>systemctl start nginx</code></li>
+<li><code>systemctl enable nginx</code></li>
+</ul>
+</li>
+<li><p>PHP组件的安装</p>
+<ul>
+<li><code>yum -y install  php-fpm</code></li>
+<li><code>yum -y install  php-mysql</code></li>
+</ul>
+</li>
+<li><p>数据库的配置</p>
+<ul>
+<li><code>yum -y install mariadb-server </code></li>
+<li><code>systemctl  start  mariadb</code></li>
+<li><code>systemctl  enable  mariadb</code></li>
+<li><code>mysql_secure_installation</code></li>
+<li><code>mysql  -uroot  -p*******</code></li>
+<li><code>create  database   wordpress;</code></li>
+<li><code>grant  all  on  wordpress.*   to  test@&#39;localhost&#39;  identified   by  &#39;lawadge&#39;</code></li>
+<li><code>flush  privileges;</code></li>
+</ul>
+</li>
+<li><p>wordpress的配置</p>
+<ul>
+<li><p><code> wget https://wordpress.org/latest.tar.gz</code></p>
+</li>
+<li><p>解压：<code>tar -zxf wordpress-5.5.tar.gz</code></p>
+</li>
+<li><p>将解压后的文件放在Nginx网站根目录下<code>/usr/share/nginx/html/ </code></p>
+</li>
+<li><p>重命名wp-config-sample.php为wp-config.php 修改wp-config.php </p>
+<p><img src="https://s1.ax1x.com/2020/08/13/aze8de.png" alt="aze8de.png"></p>
+</li>
+<li><p>访问本地IP/wordpress 并安装</p>
+<p>​    <img src="https://s1.ax1x.com/2020/08/13/azmZm8.png" alt="azmZm8.png"></p>
+<p><img src="https://s1.ax1x.com/2020/08/13/azmD6x.png" alt="azmD6x.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>至此 wordpress就搭建成功了 ～～～</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-08-12T21:34:16+08:00"
-              content="2020-08-12">
-          08-12
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/LAMP/" rel="tag"><i class="fas fa-globe-asia"></i> LAMP</a>
+              <a href="/tags/LNMP/" rel="tag"><i class="fas fa-globe-asia"></i> LNMP</a>
+              <a href="/tags/Centos7/" rel="tag"><i class="fas fa-globe-asia"></i> Centos7</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/08/12/centos7%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E7%9A%84%E6%96%B9%E5%BC%8F%E5%8F%8A%E5%91%BD%E4%BB%A4/" itemprop="url">
-            <span itemprop="name">Centos7软件安装的方式及命令</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/12/centos7%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E7%9A%84%E6%96%B9%E5%BC%8F%E5%8F%8A%E5%91%BD%E4%BB%A4/" rel="prev" title="Centos7软件安装的方式及命令">
+      <i class="fa fa-chevron-left"></i> Centos7软件安装的方式及命令
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
@@ -258,6 +458,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Centos7%E6%90%AD%E5%BB%BA%E9%85%8D%E7%BD%AELAMP"><span class="nav-number">1.</span> <span class="nav-text">Centos7搭建配置LAMP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Centos7%E6%90%AD%E5%BB%BALNMP"><span class="nav-number">2.</span> <span class="nav-text">Centos7搭建LNMP</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -273,20 +474,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
