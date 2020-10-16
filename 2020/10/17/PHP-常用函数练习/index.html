@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/themes/black/pace-theme-mac-osx.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"lawadge.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="PHP-学习：2020.10.17">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP-常用函数：2020.10.17">
+<meta property="og:url" content="https://lawadge.github.io/2020/10/17/PHP-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E7%BB%83%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Pumpkin-Man">
+<meta property="og:description" content="PHP-学习：2020.10.17">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0qm1BR.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0qncZR.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0qnxSS.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0quCes.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0quQT1.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0quamd.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0qu61S.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0qK91O.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0qK1Bj.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0qKsER.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0qK5bd.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0qMEMF.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0qMJqH.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0qMBz8.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0qMyLQ.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0qMgds.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0qMWiq.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0qMoyF.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0qMTL4.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0qMjW6.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0qQpOe.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0qQCeH.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0qQEfP.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0qQ8f0.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0qQvAs.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0qQxNn.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/17/0qQzhq.png">
+<meta property="article:published_time" content="2020-10-16T20:19:49.000Z">
+<meta property="article:modified_time" content="2020-10-16T20:31:03.030Z">
+<meta property="article:author" content="Adge">
+<meta property="article:tag" content="PHP学习">
+<meta property="article:tag" content="PHP函数练习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/10/17/0qm1BR.png">
+
+<link rel="canonical" href="https://lawadge.github.io/2020/10/17/PHP-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E7%BB%83%E4%B9%A0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>PHP-常用函数：2020.10.17 | Pumpkin-Man</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+
+<script src="/live2d-widget/autoload.js"></script>
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+    <a target="_blank" rel="noopener" href="https://github.com/lawadge" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></a>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Pumpkin-Man</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">活到老_学到老！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lawadge.github.io/2020/10/17/PHP-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E7%BB%83%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/joker.png">
+      <meta itemprop="name" content="Adge">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Pumpkin-Man">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          PHP-常用函数：2020.10.17
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-10-17 04:19:49 / 修改时间：04:31:03" itemprop="dateCreated datePublished" datetime="2020-10-17T04:19:49+08:00">2020-10-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">PHP学习</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+            <div class="post-description">PHP-学习：2020.10.17</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <ul>
+<li><p><code>strlen()</code>：返回给定的字符串 <code>string</code> 的长度。</p>
+<ul>
+<li><p>例子如下：</p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0qm1BR.png" alt="0qm1BR.png"></p>
+</li>
+</ul>
+</li>
+<li><p><code>mb_strlen：( string </code>$str<code>[, string</code>$encoding<code>= mb_internal_encoding() ] )</code></p>
+<ul>
+<li><p>参数</p>
+<ul>
+<li><p><code>str</code>:要检查长度的字符串。</p>
+<p><code>encoding</code>: 参数为字符编码。如果省略，则使用内部字符编码。</p>
+</li>
+<li><p>区别于<code>strlen</code> 它可以通过设置字符编码从而返回对应的字符数，很好的处理了中文字符串的长度问题。</p>
+</li>
+</ul>
+<p><img src="https://s1.ax1x.com/2020/10/17/0qncZR.png" alt="0qncZR.png"></p>
+</li>
+</ul>
+</li>
+<li><p><code>addslashes ( string </code>$str<code> ) : string</code></p>
+<ul>
+<li><p>返回字符串，该字符串为了数据库查询语句等的需要在某些字符前加上了反斜线。这些字符是单引号（<code>&#39;</code>）、双引号（<code>&quot;</code>）、反斜线（<code>\</code>）与 NUL（**<code>NULL</code>** 字符）。</p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0qnxSS.png" alt="0qnxSS.png"></p>
+</li>
+</ul>
+</li>
+<li><p><code>bin2hex ( string </code>$str<code> ) : string</code></p>
+<ul>
+<li><p>把二进制的参数 <code>str</code> 转换为的十六进制的字符串。转换使用字节方式，高四位字节优先。</p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0quCes.png" alt="0quCes.png"></p>
+</li>
+</ul>
+</li>
+<li><p><code>chop</code>:是 <code>rtrim()</code>的别名</p>
+<ul>
+<li><p>该函数删除 <code>str</code> 末端的空白字符（或者其他指定字符）并返回。</p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0quQT1.png" alt="0quQT1.png"></p>
+</li>
+</ul>
+</li>
+<li><p><code>chr ( int $ascii ) : string</code></p>
+<ul>
+<li><p>返回相对应于 <code>ascii</code> 所指定的单个字符。</p>
+</li>
+<li><p>此函数与 <a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/function.ord.php">ord()</a> 是互补的。</p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0quamd.png" alt="0quamd.png"></p>
+</li>
+</ul>
+</li>
+<li><p><code>crypt ( string </code>$str<code>[, string</code>$salt<code> ] ) : string</code></p>
+<ul>
+<li><p>返回一个基于标准 UNIX DES 算法或系统上其他可用的替代算法的散列字符串。</p>
+</li>
+<li><p>基于标准 DES 算法的 <strong>crypt()</strong> 在输出内容的开始位置返回两个字符的盐值。它也只使用 <code>str</code> 的开始 8 个字符，所以更长的以相同 8 个字符开始的字符串也将生成相同的结果（当使用了相同的盐值时）。</p>
+</li>
+<li><p><strong><code>CRYPT_STD_DES</code></strong> - 基于标准 DES 算法的散列使用 “./0-9A-Za-z” 字符中的两个字符作为盐值。在盐值中使用非法的字符将导致 crypt() 失败。</p>
+</li>
+<li><p><strong><code>CRYPT_EXT_DES</code></strong> - 扩展的基于 DES 算法的散列。其盐值为 9 个字符的字符串，由 1 个下划线后面跟着 4 字节循环次数和 4 字节盐值组成。它们被编码成可打印字符，每个字符 6 位，有效位最少的优先。0 到 63 被编码为 “./0-9A-Za-z”。在盐值中使用非法的字符将导致 crypt() 失败。</p>
+</li>
+<li><p><strong><code>CRYPT_MD5</code></strong> - MD5 散列使用一个以 $1$ 开始的 12 字符的字符串盐值。</p>
+</li>
+<li><p><strong><code>CRYPT_BLOWFISH</code></strong> - Blowfish 算法使用如下盐值：“$2a$”，一个两位 cost 参数，“$” 以及 64 位由 “./0-9A-Za-z” 中的字符组合而成的字符串。在盐值中使用此范围之外的字符将导致 crypt() 返回一个空字符串。两位 cost 参数是循环次数以 2 为底的对数，它的范围是 04-31，超出这个范围将导致 crypt() 失败。 PHP 5.3.7 之前只支持 “$2a$” 作为盐值的前缀，PHP 5.3.7 开始引入了新的前缀来修正一个在Blowfish实现上的安全风险。可以参考<a target="_blank" rel="noopener" href="https://www.php.net/security/crypt_blowfish.php">» this document</a>来了解关于这个修复的更多信息。总而言之，开发者如果仅针对 PHP 5.3.7及之后版本进行开发，那应该使用 “$2y$” 而非 “$2a$”</p>
+</li>
+<li><p><strong><code>CRYPT_SHA256</code></strong> - SHA-256 算法使用一个以 $5$ 开头的 16 字符字符串盐值进行散列。如果盐值字符串以 “rounds=<N>$” 开头，N 的数字值将被用来指定散列循环的执行次数，这点很像 Blowfish 算法的 cost 参数。默认的循环次数是 5000，最小是 1000，最大是 999,999,999。超出这个范围的 N 将会被转换为最接近的值。</p>
+</li>
+<li><p><strong><code>CRYPT_SHA512</code></strong> - SHA-512 算法使用一个以 $6$ 开头的 16 字符字符串盐值进行散列。如果盐值字符串以 “rounds=<N>$” 开头，N 的数字值将被用来指定散列循环的执行次数，这点很像 Blowfish 算法的 cost 参数。默认的循环次数是 5000，最小是 1000，最大是 999,999,999。超出这个范围的 N 将会被转换为最接近的值</p>
+</li>
+<li><p>以不同散列类型使用<code> crypt()</code></p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0qu61S.png" alt="0qu61S.png"></p>
+</li>
+</ul>
+</li>
+<li><p><code>htmlentities ( string </code>$string<code>[, int</code>$flags<code>= ENT_COMPAT | ENT_HTML401 [, string</code>$encoding<code>= ini_get(&quot;default_charset&quot;) [, bool</code>$double_encode<code> = **</code>TRUE<code>** ]]] ) : string</code></p>
+<ul>
+<li><p>将字符转换为 HTML 转义字符</p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0qK91O.png" alt="0qK91O.png"></p>
+</li>
+</ul>
+</li>
+<li><p><code>implode ( string </code>$glue<code>, array</code>$pieces<code> ) : string</code> </p>
+</li>
+<li><p>将一个一维数组的值转化为字符串</p>
+</li>
+<li><p>参数：</p>
+<ul>
+<li><p><code>glue</code>：默认为空的字符串。</p>
+</li>
+<li><p><code>pieces</code>：你想要转换的数组。</p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0qK1Bj.png" alt="0qK1Bj.png"></p>
+</li>
+</ul>
+</li>
+<li><p><code>md5_file ( string </code>$filename<code>[, bool</code>$raw_output<code> = **</code>FALSE<code>** ] ) : string</code></p>
+<ul>
+<li><p>计算指定文件的 MD5 散列值</p>
+</li>
+<li><p>参数：</p>
+<ul>
+<li><p><code>filename</code>：文件名.</p>
+</li>
+<li><p><code>raw_output</code>：如果被设置为 **<code>TRUE</code>**，那么报文摘要将以原始的 16 位二进制格式返回.、</p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0qKsER.png" alt="0qKsER.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>str_replace($search,$replace,$subject,$count)</code></p>
+<ul>
+<li><p>子字符串替换</p>
+</li>
+<li><p>参数：</p>
+<ul>
+<li><p><code>search</code>：查找的目标值，也就是 <em>needle</em>。一个数组可以指定多个目标。</p>
+</li>
+<li><p><code>replace</code>：<code>search</code> 的替换值。一个数组可以被用来指定多重替换。</p>
+</li>
+<li><p><code>subject</code>：执行替换的数组或者字符串。也就是 <em>haystack</em>。</p>
+<p>如果 <code>subject</code> 是一个数组，替换操作将遍历整个 <code>subject</code>，返回值也将是一个数组。</p>
+</li>
+<li><p><code>count</code>：如果被指定，它的值将被设置为替换发生的次数。</p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0qK5bd.png" alt="0qK5bd.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>str_split ( string </code>$string<code>[, int</code>$split_length<code> = 1 ] ) : array</code></p>
+<ul>
+<li><p>将一个字符串转换为数组.</p>
+</li>
+<li><p>参数：</p>
+<ul>
+<li><p><code>string </code>：输入字符串。</p>
+</li>
+<li><p><code>split_length</code>：每一段的长度。</p>
+</li>
+<li><p>返回值：如果指定了可选的 <code>split_length</code> 参数，返回数组中的每个元素均为一个长度为 <code>split_length</code> 的字符块，否则每个字符块为单个字符。</p>
+<p>如果 <code>split_length</code> 小于 1，返回 **<code>FALSE</code>**。如果 <code>split_length</code> 参数超过了 <code>string</code> 超过了字符串 <code>string</code> 的长度，整个字符串将作为数组仅有的一个元素返回。</p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0qMEMF.png" alt="0qMEMF.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>split ( string </code>$pattern<code>, string</code>$string<code>[, int</code>$limit<code> ] ) : array</code> </p>
+</li>
+<li><p>用正则表达式将字符串分割到数组中</p>
+<ul>
+<li><p>本函数返回一个字符串数组，每个单元为 <code>string</code> 经区分大小写的正则表达式 <code>pattern</code> 作为边界分割出的子串。如果设定了 <code>limit</code>，则返回的数组最多包含 <code>limit</code> 个单元，而其中最后一个单元包含了 <code>string</code> 中剩余的所有部分。如果出错，则 <strong>split()</strong> 返回 **<code>FALSE</code>**。</p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0qMJqH.png" alt="0qMJqH.png"></p>
+</li>
+</ul>
+</li>
+<li><p><code>strcmp ( string </code>$str1<code>, string</code>$str2<code> ) : int</code></p>
+</li>
+<li><p>二进制安全字符串比较</p>
+<ul>
+<li><p>参数：</p>
+<ul>
+<li><code>str1</code>：第一个字符串。</li>
+<li><code>str2</code>：第二个字符串。</li>
+</ul>
+</li>
+<li><p>返回值：如果 <code>str1</code> 小于 <code>str2</code> 返回 &lt; 0； 如果 <code>str1</code> 大于 <code>str2</code> 返回 &gt; 0；如果两者相等，返回 0。</p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0qMBz8.png" alt="0qMBz8.png"></p>
+</li>
+</ul>
+</li>
+<li><p><code>strcasecmp ( string </code>$str1<code>, string</code>$str2<code> ) : int</code> </p>
+</li>
+<li><p>二进制安全比较字符串（不区分大小写）。</p>
+<ul>
+<li><p>与<code>strcmp</code>返回值一样</p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0qMyLQ.png" alt="0qMyLQ.png"></p>
+</li>
+</ul>
+</li>
+<li><p><code>strstr($haystack,$needle,$before_needle)</code></p>
+</li>
+<li><p>查找字符串的首次出现.</p>
+<ul>
+<li><p>参数：</p>
+</li>
+<li><p><code>$haystack</code>：输入字符串。</p>
+</li>
+<li><p><code>$needle</code>：如果 <code>needle</code> 不是一个字符串，那么它将被转化为整型并且作为字符的序号来使用。</p>
+</li>
+<li><p><code>$before_needle</code>：若为 **<code>TRUE</code>**，<code>strstr()</code>将返回 <code>needle</code> 在 <code>haystack</code> 中的位置之前的部分。</p>
+</li>
+<li><p>返回值：<code>返回字符串的一部分或者 **</code>FALSE<code>**（如果未发现 </code>needle<code>）。</code></p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0qMgds.png" alt="0qMgds.png"></p>
+</li>
+</ul>
+</li>
+<li><p><code>substr ( string </code>$string<code>, int</code>$start<code>[, int</code>$length<code> ] ) : string</code></p>
+</li>
+<li><p>返回字符串的子串,返回字符串 <code>string</code> 由 <code>start</code> 和 <code>length</code> 参数指定的子字符串。</p>
+<ul>
+<li><p>参数：</p>
+</li>
+<li><p><code>string</code>：输入字符串。必须至少有一个字符</p>
+</li>
+<li><p><code>start</code>：如果 <code>start</code> 是非负数，返回的字符串将从 <code>string</code> 的 <code>start</code> 位置开始，从 0 开始计算。例如，在字符串 “<code>abcdef</code>” 中，在位置 <code>0</code> 的字符是 “<code>a</code>”，位置 <code>2</code> 的字符串是 “<code>c</code>” 等等。</p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0qMWiq.png" alt="0qMWiq.png"></p>
+</li>
+</ul>
+</li>
+<li><p><code>preg_match ( string </code>$pattern<code>, string</code>$subject<code>[, array</code>&amp;$matches<code>[, int</code>$flags<code>= 0 [, int</code>$offset<code> = 0 ]]] ) : int</code></p>
+</li>
+<li><p>执行匹配正则表达，搜索<code>subject</code>与<code>pattern</code>给定的正则表达式的一个匹配.</p>
+</li>
+<li><p>参数：</p>
+<ul>
+<li><p><code>$pattern</code>：要搜索的模式，字符串类型。</p>
+</li>
+<li><p><code>$subject</code>：输入字符串。</p>
+</li>
+<li><p><code>$matches</code>：如果提供了参数<code>matches</code>，它将被填充为搜索结果。 $matches[0]将包含完整模式匹配到的文本， $matches[1] 将包含第一个捕获子组匹配到的文本，以此类推。</p>
+</li>
+<li><p><code>$flags</code>：可以被设置为以下标记值的组合：</p>
+<ul>
+<li><code>PREG_OFFSET_CAPTURE</code></li>
+<li>如果传递了这个标记，对于每一个出现的匹配返回时会附加字符串偏移量(相对于目标字符串的字节数)。 注意：这会改变填充到<code>matches</code>参数的数组，使其每个元素成为一个由 第<code>0</code>个元素是匹配到的字符串，第<code>1</code>个元素是该匹配字符串 在目标字符串<code>subject</code>中的偏移量。</li>
+</ul>
+</li>
+<li><p><code>$offset</code>：可选参数 <code>offset</code> 用于 指定从目标字符串的某个位置开始搜索(单位是字节)</p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0qMoyF.png" alt="0qMoyF.png"></p>
+</li>
+</ul>
+</li>
+<li><p><code>preg_match_all ( string </code>$pattern<code>, string</code>$subject<code>[, array</code>&amp;$matches<code>[, int</code>$flags<code> = **</code>PREG_PATTERN_ORDER<code>** [, int </code>$offset<code> = 0 ]]] ) : int</code></p>
+</li>
+<li><p>执行一个全局正则表达式匹配，搜索<code>subject</code>中所有匹配<code>pattern</code>给定正则表达式 的匹配结果并且将它们以<code>flag</code>指定顺序输出到<code>matches</code>中. </p>
+</li>
+<li><p>在第一个匹配找到后, 子序列继续从最后一次匹配位置搜索.</p>
+<ul>
+<li><p>参数与<code>preg_match</code>类似</p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0qMTL4.png" alt="0qMTL4.png"></p>
+</li>
+</ul>
+</li>
+<li><p><code>intval($var,$base)</code></p>
+</li>
+<li><p>获取变量的整数值</p>
+<ul>
+<li><p>参数：    </p>
+<ul>
+<li><code>var</code>：要转换成 integer 的数量值</li>
+<li><code>base</code>：转化所使用的进制</li>
+</ul>
+</li>
+<li><p>返回值：成功时返回 <code>var</code> 的 integer 值，失败时返回 0。 空的 array 返回 0，非空的 array 返回 1</p>
+</li>
+<li><p>最大的值取决于操作系统。 32 位系统最大带符号的 integer 范围是 -2147483648 到 2147483647。举例，在这样的系统上， <code>intval(&#39;1000000000000&#39;)</code> 会返回 2147483647。64 位系统上，最大带符号的 integer 值是 9223372036854775807。</p>
+</li>
+<li><p>字符串有可能返回 0，虽然取决于字符串最左侧的字符。 使用 <a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/language.types.integer.php#language.types.integer.casting">整型转换</a> 的共同规则</p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0qMjW6.png" alt="0qMjW6.png"></p>
+</li>
+</ul>
+</li>
+<li><p><code>floatval($var): float</code></p>
+</li>
+<li><p>获取变量的浮点值，返回变量 <code>var</code> 的 <a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/language.types.float.php">float</a> 数值。</p>
+<p>​    <img src="https://s1.ax1x.com/2020/10/17/0qQpOe.png" alt="0qQpOe.png"></p>
+</li>
+<li><p><code>strval($var):string</code></p>
+</li>
+<li><p>获取变量的字符串值</p>
+<ul>
+<li><p>参数：<code>$var</code></p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0qQCeH.png" alt="0qQCeH.png"></p>
+</li>
+</ul>
+</li>
+<li><p><code>settype($var,$type):bool</code></p>
+</li>
+<li><p>设置变量的类型</p>
+</li>
+<li><p>参数：</p>
+<ul>
+<li><p><code>var</code>：要转换的变量。</p>
+</li>
+<li><p><code>type</code>：</p>
+<ul>
+<li><pre><code>`type` 的可能值为：的可能值为：
+- “boolean” （或为“bool”，从 PHP 4.2.0 起）
+- “integer” （或为“int”，从 PHP 4.2.0 起）
+- “float” （只在 PHP 4.2.0 之后可以使用，对于旧版本中使用的“double”现已停用）
+- &quot;string&quot;
+- &quot;array&quot;
+- &quot;object&quot;
+- “null” （从 PHP 4.2.0 起）</code></pre>
+</li>
+</ul>
+</li>
+<li><p>返回值：成功时返回 **<code>TRUE</code>**， 或者在失败时返回 **<code>FALSE</code>**。</p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0qQEfP.png" alt="0qQEfP.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="使用if和switch写一个例子"><a href="#使用if和switch写一个例子" class="headerlink" title="使用if和switch写一个例子"></a>使用if和switch写一个例子</h2><ul>
+<li><p>如下：</p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0qQ8f0.png" alt="0qQ8f0.png"></p>
+</li>
+</ul>
+<p>​    </p>
+<h2 id="用for-foreach-while等循环结构写一个例子，结合前面的逻辑比较。"><a href="#用for-foreach-while等循环结构写一个例子，结合前面的逻辑比较。" class="headerlink" title="用for foreach while等循环结构写一个例子，结合前面的逻辑比较。"></a>用<code>for foreach while</code>等循环结构写一个例子，结合前面的逻辑比较。</h2><ul>
+<li><p><code>For循环</code></p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0qQvAs.png" alt="0qQvAs.png"></p>
+</li>
+<li><p><code>Foreach</code>：foreach 循环只适用于数组，并用于遍历数组中的每个键/值对。</p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0qQxNn.png" alt="0qQxNn.png"></p>
+</li>
+<li><p><code>while循环</code>：只要指定的条件为真，while 循环就会执行代码块。</p>
+<p><img src="https://s1.ax1x.com/2020/10/17/0qQzhq.png" alt="0qQzhq.png"></p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Adge
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lawadge.github.io/2020/10/17/PHP-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E7%BB%83%E4%B9%A0/" title="PHP-常用函数：2020.10.17">https://lawadge.github.io/2020/10/17/PHP-常用函数练习/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/PHP%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="fas fa-globe-asia"></i> PHP学习</a>
+              <a href="/tags/PHP%E5%87%BD%E6%95%B0%E7%BB%83%E4%B9%A0/" rel="tag"><i class="fas fa-globe-asia"></i> PHP函数练习</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/04/PHP-%E5%AD%A6%E4%B9%A0/" rel="prev" title="PHP-学习：2020.10.03">
+      <i class="fa fa-chevron-left"></i> PHP-学习：2020.10.03
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8if%E5%92%8Cswitch%E5%86%99%E4%B8%80%E4%B8%AA%E4%BE%8B%E5%AD%90"><span class="nav-number">1.</span> <span class="nav-text">使用if和switch写一个例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8for-foreach-while%E7%AD%89%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84%E5%86%99%E4%B8%80%E4%B8%AA%E4%BE%8B%E5%AD%90%EF%BC%8C%E7%BB%93%E5%90%88%E5%89%8D%E9%9D%A2%E7%9A%84%E9%80%BB%E8%BE%91%E6%AF%94%E8%BE%83%E3%80%82"><span class="nav-number">2.</span> <span class="nav-text">用for foreach while等循环结构写一个例子，结合前面的逻辑比较。</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Adge"
+      src="/images/joker.png">
+  <p class="site-author-name" itemprop="name">Adge</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lawadge" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lawadge" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lawadge@gmail.com" title="E-Mail → mailto:lawadge@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.google.com/" title="https:&#x2F;&#x2F;www.google.com&#x2F;" rel="noopener" target="_blank">谷歌</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.baidu.com/" title="https:&#x2F;&#x2F;www.baidu.com&#x2F;" rel="noopener" target="_blank">百度</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.bilibili.com/" title="https:&#x2F;&#x2F;www.bilibili.com&#x2F;" rel="noopener" target="_blank">B站</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heartbeat"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Adge</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">27k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">24 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+  
+<script type="text/javascript"
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/fireworks.js"></script>
+ 
+
+
+
+</body>
+</html>
