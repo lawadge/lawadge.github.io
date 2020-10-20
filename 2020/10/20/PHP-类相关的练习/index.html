@@ -22,15 +22,32 @@
     var CONFIG = {"hostname":"lawadge.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Pumpkin-Man">
-<meta property="og:url" content="https://lawadge.github.io/tags/PHP%E5%87%BD%E6%95%B0%E7%BB%83%E4%B9%A0/index.html">
+  <meta name="description" content="PHP-学习：2020.10.20">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP-类的学习：2020.10.20">
+<meta property="og:url" content="https://lawadge.github.io/2020/10/20/PHP-%E7%B1%BB%E7%9B%B8%E5%85%B3%E7%9A%84%E7%BB%83%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Pumpkin-Man">
+<meta property="og:description" content="PHP-学习：2020.10.20">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/20/0zXHbV.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/20/0zjsG4.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/20/0zxKN8.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/20/0zzFaV.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/20/BSpS7q.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/20/BS9EPf.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/20/BS9RLd.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/20/BS9jwn.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/20/BSCpWT.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/20/BSCmY6.png">
+<meta property="article:published_time" content="2020-10-20T00:10:49.000Z">
+<meta property="article:modified_time" content="2020-10-20T02:18:49.300Z">
 <meta property="article:author" content="Adge">
+<meta property="article:tag" content="PHP学习">
+<meta property="article:tag" content="PHP类">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/10/20/0zXHbV.png">
 
-<link rel="canonical" href="https://lawadge.github.io/tags/PHP%E5%87%BD%E6%95%B0%E7%BB%83%E4%B9%A0/">
+<link rel="canonical" href="https://lawadge.github.io/2020/10/20/PHP-%E7%B1%BB%E7%9B%B8%E5%85%B3%E7%9A%84%E7%BB%83%E4%B9%A0/">
 
 
 <script id="page-configurations">
@@ -38,12 +55,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: PHP函数练习 | Pumpkin-Man</title>
+  <title>PHP-类的学习：2020.10.20 | Pumpkin-Man</title>
   
 
 
@@ -161,51 +178,214 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">PHP函数练习
-          <small>标签</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lawadge.github.io/2020/10/20/PHP-%E7%B1%BB%E7%9B%B8%E5%85%B3%E7%9A%84%E7%BB%83%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/joker.png">
+      <meta itemprop="name" content="Adge">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Pumpkin-Man">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          PHP-类的学习：2020.10.20
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-10-20 08:10:49 / 修改时间：10:18:49" itemprop="dateCreated datePublished" datetime="2020-10-20T08:10:49+08:00">2020-10-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">PHP学习</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+            <div class="post-description">PHP-学习：2020.10.20</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <h1 id="一-编写一个类，这个类可以做到如下工作："><a href="#一-编写一个类，这个类可以做到如下工作：" class="headerlink" title="一.编写一个类，这个类可以做到如下工作："></a>一.编写一个类，这个类可以做到如下工作：</h1><ul>
+<li><p>（1.）实现计算两个数大小比较，且返回最大值。</p>
+<p>​    <a target="_blank" rel="noopener" href="https://imgchr.com/i/0zXHbV"><img src="https://s1.ax1x.com/2020/10/20/0zXHbV.png" alt="0zXHbV.png"></a></p>
+</li>
+<li><p>（2.）实现将两个数的值进行交换，无返回值。</p>
+<p>​    <a target="_blank" rel="noopener" href="https://imgchr.com/i/0zjsG4"><img src="https://s1.ax1x.com/2020/10/20/0zjsG4.png" alt="0zjsG4.png"></a></p>
+</li>
+<li><p>（3.）对数组实现array_flip()操作，返回一个新的数组</p>
+<p>​    <a target="_blank" rel="noopener" href="https://imgchr.com/i/0zxKN8"><img src="https://s1.ax1x.com/2020/10/20/0zxKN8.png" alt="0zxKN8.png"></a></p>
+</li>
+</ul>
+<h1 id="二-编写一个接口，接口实现的类中有一个方法，计算数组的长度，不准使用count。"><a href="#二-编写一个接口，接口实现的类中有一个方法，计算数组的长度，不准使用count。" class="headerlink" title="二.编写一个接口，接口实现的类中有一个方法，计算数组的长度，不准使用count。"></a>二.编写一个接口，接口实现的类中有一个方法，计算数组的长度，不准使用count。</h1><p>​    <a target="_blank" rel="noopener" href="https://imgchr.com/i/0zzFaV"><img src="https://s1.ax1x.com/2020/10/20/0zzFaV.png" alt="0zzFaV.png"></a></p>
+<h1 id="三、实现一个简单计算器类，有加减乘除求模五个方法。要求-1，除和求模的时候，判断被除数是否为零；要求-2，整个计算器类仅仅能接收整书或浮点数。"><a href="#三、实现一个简单计算器类，有加减乘除求模五个方法。要求-1，除和求模的时候，判断被除数是否为零；要求-2，整个计算器类仅仅能接收整书或浮点数。" class="headerlink" title="三、实现一个简单计算器类，有加减乘除求模五个方法。要求 1，除和求模的时候，判断被除数是否为零；要求 2，整个计算器类仅仅能接收整书或浮点数。"></a>三、实现一个简单计算器类，有加减乘除求模五个方法。要求 1，除和求模的时候，判断被除数是否为零；要求 2，整个计算器类仅仅能接收整书或浮点数。</h1><pre><code>&lt;?php
+$L=$_GET[&#39;L&#39;];
+$A=$_GET[&#39;A&#39;];
+$W=$_GET[&#39;W&#39;];    //接收加减乘除取模符号
+header(&quot;Content-Type:text/html;charset=utf-8&quot;);
+class Compare &#123; 
+
+    public $number1;                               
+    public $number2;
+&#125;
+$Compare1 = new Compare();
+
+$Compare1-&gt;number1 = $L;
+
+$Compare1-&gt;number2 = $A;
+
+//判断浮点数和整数
+if(is_numeric($L)&amp;&amp;is_numeric($A)&amp;&amp;isset($W))&#123;
+    switch($W)
+    &#123;
+        case &quot;+&quot;:
+            $result = $L + $A;
+            echo &quot;number1+number2=&quot;.$result;
+            break;
+        case &quot;-&quot;:
+            $result = $L - $A;
+            echo &quot;number1-number2=&quot;.$result;
+            break;
+        case &quot;*&quot;:
+            $result = $L * $A;
+            echo &quot;number1*number2=&quot;.$result;
+            break;
+        case &quot;/&quot;:
+            $result = $L / $A;
+            echo &quot;number1/number2=&quot;.$result;
+            break;
+        case &quot;%&quot;:
+            //判断被除数是否为零
+            if($A!=0)
+            &#123;
+                $result = $L % $A;
+                echo &quot;number1%number2=&quot;.$result;
+            &#125;
+            else&#123;
+                echo &quot;被除数为0&quot;;
+            &#125;
+            break;
+        default:
+            echo &quot;none&quot;;
+    &#125;
+&#125;
+?&gt;</code></pre>
+<ul>
+<li><p>加法：</p>
+<ul>
+<li><p>在 url 中 “+” 符号属于空格符，需要将 + 号 进行URL编码</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/BSpS7q"><img src="https://s1.ax1x.com/2020/10/20/BSpS7q.png" alt="BSpS7q.png"></a></p>
+</li>
+</ul>
+</li>
+<li><p>减法：</p>
+<p>​    <a target="_blank" rel="noopener" href="https://imgchr.com/i/BS9EPf"><img src="https://s1.ax1x.com/2020/10/20/BS9EPf.png" alt="BS9EPf.png"></a></p>
+</li>
+<li><p>乘法：</p>
+<p>​    <a target="_blank" rel="noopener" href="https://imgchr.com/i/BS9RLd"><img src="https://s1.ax1x.com/2020/10/20/BS9RLd.png" alt="BS9RLd.png"></a></p>
+</li>
+<li><p>除法：</p>
+<p>​    <a target="_blank" rel="noopener" href="https://imgchr.com/i/BS9jwn"><img src="https://s1.ax1x.com/2020/10/20/BS9jwn.png" alt="BS9jwn.png"></a></p>
+</li>
+<li><p>取模：</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/BSCpWT"><img src="https://s1.ax1x.com/2020/10/20/BSCpWT.png" alt="BSCpWT.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/BSCmY6"><img src="https://s1.ax1x.com/2020/10/20/BSCmY6.png" alt="BSCmY6.png"></a></p>
+</li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+        
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-10-17T04:19:49+08:00"
-              content="2020-10-17">
-          10-17
-        </time>
-      </div>
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Adge
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lawadge.github.io/2020/10/20/PHP-%E7%B1%BB%E7%9B%B8%E5%85%B3%E7%9A%84%E7%BB%83%E4%B9%A0/" title="PHP-类的学习：2020.10.20">https://lawadge.github.io/2020/10/20/PHP-类相关的练习/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/17/PHP-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E7%BB%83%E4%B9%A0-1/" itemprop="url">
-            <span itemprop="name">PHP-常用函数：2020.10.17</span>
-          </a>
-      </div>
 
-    </header>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/PHP%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="fas fa-globe-asia"></i> PHP学习</a>
+              <a href="/tags/PHP%E7%B1%BB/" rel="tag"><i class="fas fa-globe-asia"></i> PHP类</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/17/PHP-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E7%BB%83%E4%B9%A0-1/" rel="prev" title="PHP-常用函数：2020.10.17">
+      <i class="fa fa-chevron-left"></i> PHP-常用函数：2020.10.17
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
@@ -258,6 +438,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80-%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E7%B1%BB%EF%BC%8C%E8%BF%99%E4%B8%AA%E7%B1%BB%E5%8F%AF%E4%BB%A5%E5%81%9A%E5%88%B0%E5%A6%82%E4%B8%8B%E5%B7%A5%E4%BD%9C%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">一.编写一个类，这个类可以做到如下工作：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C-%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E6%8E%A5%E5%8F%A3%EF%BC%8C%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%B1%BB%E4%B8%AD%E6%9C%89%E4%B8%80%E4%B8%AA%E6%96%B9%E6%B3%95%EF%BC%8C%E8%AE%A1%E7%AE%97%E6%95%B0%E7%BB%84%E7%9A%84%E9%95%BF%E5%BA%A6%EF%BC%8C%E4%B8%8D%E5%87%86%E4%BD%BF%E7%94%A8count%E3%80%82"><span class="nav-number">2.</span> <span class="nav-text">二.编写一个接口，接口实现的类中有一个方法，计算数组的长度，不准使用count。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E8%AE%A1%E7%AE%97%E5%99%A8%E7%B1%BB%EF%BC%8C%E6%9C%89%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E6%B1%82%E6%A8%A1%E4%BA%94%E4%B8%AA%E6%96%B9%E6%B3%95%E3%80%82%E8%A6%81%E6%B1%82-1%EF%BC%8C%E9%99%A4%E5%92%8C%E6%B1%82%E6%A8%A1%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%8C%E5%88%A4%E6%96%AD%E8%A2%AB%E9%99%A4%E6%95%B0%E6%98%AF%E5%90%A6%E4%B8%BA%E9%9B%B6%EF%BC%9B%E8%A6%81%E6%B1%82-2%EF%BC%8C%E6%95%B4%E4%B8%AA%E8%AE%A1%E7%AE%97%E5%99%A8%E7%B1%BB%E4%BB%85%E4%BB%85%E8%83%BD%E6%8E%A5%E6%94%B6%E6%95%B4%E4%B9%A6%E6%88%96%E6%B5%AE%E7%82%B9%E6%95%B0%E3%80%82"><span class="nav-number">3.</span> <span class="nav-text">三、实现一个简单计算器类，有加减乘除求模五个方法。要求 1，除和求模的时候，判断被除数是否为零；要求 2，整个计算器类仅仅能接收整书或浮点数。</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
